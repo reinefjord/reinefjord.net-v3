@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* legacy */
+  word-break: break-word; /* for WebKit/Chrome */
+}
+
+html {
+  line-height: 1.5;
+}
+
+body {
+  font-family: sans-serif;
+  text-decoration-skip-ink: auto;
+  margin: 1rem;
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+h1, h2, h3 {
+  color: #50fa7b;
+}
+
+a {
+  color: #8be9fd;
+}
+
+a:visited {
+  color: #caa9fa;
+}
+
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+dd {
+  margin-top: .2rem;
+  margin-bottom: .7rem;
+}
+
+code, .email {
+  /* http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/ */
+  font-family: monospace, monospace;
+}
+
+footer {
+  margin: 2rem 0;
+  text-align: center;
+  color: #50fa7b;
+}
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <title>Rupus Reinefjord</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Välkommen!</h1>
+      <p>
+        My name is Rupus Reinefjord and this is my own little corner of the World Wide Web.
+      </p>
+
+      <h2>Where I am</h2>
+      <dl>
+        <dt>GitHub:</dt>
+        <dd><a href="https://github.com/reinefjord">reinefjord</a></dd>
+        <dt>Flickr:</dt>
+        <dd><a href="https://www.flickr.com/photos/koltrast_">koltrast_</a></dd>
+        <dt>Instagram:</dt>
+        <dd><a href="https://www.instagram.com/rupusreinefjord/">@rupusreinefjord</a></dd>
+        <dt>Keybase:</dt>
+        <dd><a href="https://keybase.io/rupus">rupus</a></dd>
+      </dl>
+
+      <h2>Contact me</h2>
+      <dl>
+        <dt>Email:</dt>
+        <dd>
+        <a href="mailto:firstname(at)lastname(dot)net" class="email encoded" data-encoded="cnVwdXNAcmVpbmVmam9yZC5uZXQK">
+          firstname(at)lastname(dot)net
+        </a>
+        <p class="nojs">
+          Please activate javascript to see the address, or use the hint above to figure it out.
+        </p>
+        </dd>
+        <dt>PGP key:</dt>
+        <dd>
+        <a href="/static/rupusreinefjord_pubkey.asc">
+          <code>E275 C3F0 8765 EBC3 C906 65F4 E918 999B E668 8BD2</code>
+        </a>
+        </dd>
+      </dl>
+    </main>
+    <footer>&#10086;</footer>
+    <script>
+      function emaildecode() {
+        var emails = document.getElementsByClassName("encoded");
+
+        for (var i = 0; i < emails.length; i++) {
+          var b64 = emails[i].dataset.encoded;
+          var decoded = window.atob(b64);
+          emails[i].innerHTML = decoded;
+          emails[i].href = "mailto:" + decoded;
+        }
+      }
+
+      function hidenojs() {
+        var nojs = document.getElementsByClassName("nojs");
+
+        for (var i = 0; i < nojs.length; i++) {
+          nojs[i].style.display = "none";
+        }
+      }
+
+      emaildecode();
+      hidenojs();
+    </script>
+  </body>
+</html>
