@@ -2,6 +2,45 @@
 <html lang="en">
   <head>
     <style>
+      @font-face {
+        font-family: 'IBM Plex Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local("IBM Plex Serif"), local("IBMPlexSerif"), url("/static/fonts/IBMPlexSerif-Regular-Latin1.woff2") format("woff2");
+        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+      }
+
+      @font-face {
+        font-family: 'IBM Plex Serif';
+        font-style: italic;
+        font-weight: 400;
+        src: local("IBM Plex Serif Italic"), local("IBMPlexSerif-Italic"), url("/static/fonts/IBMPlexSerif-Italic-Latin1.woff2") format("woff2");
+        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+      }
+
+      @font-face {
+        font-family: 'IBM Plex Serif';
+        font-style: italic;
+        font-weight: 700;
+        src: local("IBM Plex Serif Bold Italic"), local("IBMPlexSerif-BoldItalic"), url("/static/fonts/IBMPlexSerif-BoldItalic-Latin1.woff2") format("woff2");
+        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+      }
+
+      @font-face {
+        font-family: 'IBM Plex Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local("IBM Plex Serif Bold"), local("IBMPlexSerif-Bold"), url("/static/fonts/IBMPlexSerif-Bold-Latin1.woff2") format("woff2");
+        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+      }
+
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 400;
+        src: local("IBM Plex Mono"), local("IBMPlexMono"), url("/static/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+      }
+
       * {
         box-sizing: border-box;
         overflow-wrap: break-word;
@@ -14,23 +53,18 @@
       }
 
       body {
-        font-family: sans-serif;
+        font-family: "IBM Plex Serif";
         text-decoration-skip-ink: auto;
         margin: 1rem;
-        background-color: #282a36;
-        color: #f8f8f2;
-      }
-
-      h1, h2, h3 {
-        color: #50fa7b;
+        background-color: #f2eede;
       }
 
       a {
-        color: #8be9fd;
+        color: #1e6fcc;
       }
 
       a:visited {
-        color: #caa9fa;
+        color: #5c21a5;
       }
 
       main {
@@ -45,13 +79,12 @@
 
       code, .email {
         /* http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/ */
-        font-family: monospace, monospace;
+        font-family: "IBM Plex Mono";
       }
 
       footer {
         margin: 2rem 0;
         text-align: center;
-        color: #50fa7b;
       }
     </style>
 
