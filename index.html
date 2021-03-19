@@ -10,75 +10,11 @@
     <title>Rupus Reinefjord</title>
 
     <style>
-      @font-face {
-        font-family: 'IBM Plex Serif';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local("IBM Plex Serif"), local("IBMPlexSerif"), url("/static/fonts/IBMPlexSerif-Regular-Latin1.woff2") format("woff2");
-        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
-      }
-
-      @font-face {
-        font-family: 'IBM Plex Serif';
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: local("IBM Plex Serif Italic"), local("IBMPlexSerif-Italic"), url("/static/fonts/IBMPlexSerif-Italic-Latin1.woff2") format("woff2");
-        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
-      }
-
-      @font-face {
-        font-family: 'IBM Plex Serif';
-        font-style: italic;
-        font-weight: 700;
-        font-display: swap;
-        src: local("IBM Plex Serif Bold Italic"), local("IBMPlexSerif-BoldItalic"), url("/static/fonts/IBMPlexSerif-BoldItalic-Latin1.woff2") format("woff2");
-        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
-      }
-
-      @font-face {
-        font-family: 'IBM Plex Serif';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local("IBM Plex Serif Bold"), local("IBMPlexSerif-Bold"), url("/static/fonts/IBMPlexSerif-Bold-Latin1.woff2") format("woff2");
-        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
-      }
-
-      @font-face {
-        font-family: 'IBM Plex Mono';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local("IBM Plex Mono"), local("IBMPlexMono"), url("/static/fonts/IBMPlexMono-Regular-Latin1.woff2") format("woff2");
-        unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
-      }
-
       * {
         box-sizing: border-box;
         overflow-wrap: break-word;
         word-wrap: break-word; /* legacy */
         word-break: break-word; /* for WebKit/Chrome */
-      }
-
-      html {
-        line-height: 1.5;
-      }
-
-      body {
-        font-family: "IBM Plex Serif";
-        text-decoration-skip-ink: auto;
-        margin: 1rem;
-        background-color: #f7f4eb;
-      }
-
-      a {
-        color: #1e6fcc;
-      }
-
-      a:visited {
-        color: #5c21a5;
       }
 
       main {
@@ -92,7 +28,11 @@
       }
 
       code, .email {
-        font-family: "IBM Plex Mono";
+        font-family: monospace, monospace;
+      }
+
+      #gpg-fingerprint {
+        font-size: small;
       }
 
       footer {
@@ -104,42 +44,35 @@
 
   <body>
     <main>
-      <h1>Hej!</h1>
+      <h1>Rupus Reinefjord</h1>
       <p>
-        My name is Rupus Reinefjord and this is my personal website. I am a
-        programmer currently working for <a href="https://46elks.com">46elks</a>.
+        I am a programmer currently working for
+        <a href="https://46elks.com">46elks</a>. I believe strongly in keeping
+        tech and code complexity low. I try to work with the
+        <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>
+        principle in mind.
       </p>
 
-      <h2>Where I am</h2>
-      <dl>
-        <dt>GitHub:</dt>
-        <dd><a href="https://github.com/reinefjord">reinefjord</a></dd>
-        <dt>Flickr:</dt>
-        <dd><a href="https://www.flickr.com/photos/koltrast_">koltrast_</a></dd>
-        <dt>Instagram:</dt>
-        <dd><a href="https://www.instagram.com/rupusreinefjord/">@rupusreinefjord</a></dd>
-      </dl>
+      <h2>Some links</h2>
+      <ul>
+        <li>GitHub - <a href="https://github.com/reinefjord">reinefjord</a></li>
+        <li>Flickr - <a href="https://www.flickr.com/photos/koltrast_">koltrast_</a></li>
+        <li>Instagram - <a href="https://www.instagram.com/rupusreinefjord/">@rupusreinefjord</a></li>
+      </ul>
 
       <h2>Contact me</h2>
-      <dl>
-        <dt>Email:</dt>
-        <dd>
-        <a href="mailto:firstname(at)lastname(dot)net" class="email encoded" data-encoded="cnVwdXNAcmVpbmVmam9yZC5uZXQK">
-          firstname(at)lastname(dot)net
-        </a>
-        <p class="nojs">
-          Please activate javascript to see the address, or use the hint above to figure it out.
-        </p>
-        </dd>
-        <dt>PGP key:</dt>
-        <dd>
-        <a href="/static/rupusreinefjord_pubkey.asc">
-          <code>DA6B 0C46 A100 662F FA4A 9B0D E17E 90E2 CE1F D278</code>
-        </a>
-        </dd>
-      </dl>
+      <ul>
+        <li>Email - <a href="mailto:rupus(at)reinefjord(dot)net" class="email encoded" data-encoded="cnVwdXNAcmVpbmVmam9yZC5uZXQK">rupus(at)reinefjord(dot)net</a>
+        <li>PGP key -
+          <a href="/static/rupusreinefjord_pubkey.asc">
+            <code id="gpg-fingerprint">DA6B 0C46 A100 662F FA4A 9B0D E17E 90E2 CE1F D278</code>
+          </a>
+        </li>
+      </ul>
     </main>
+
     <footer>&#10086;</footer>
+
     <script>
       function emaildecode() {
         var emails = document.getElementsByClassName("encoded");
