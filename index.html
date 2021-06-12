@@ -22,11 +22,6 @@
         margin: 0 auto;
       }
 
-      dd {
-        margin-top: .2rem;
-        margin-bottom: .7rem;
-      }
-
       code, .email {
         font-family: monospace, monospace;
       }
@@ -83,14 +78,7 @@
           emails[i].href = "mailto:" + decoded;
         }
       }
-      function hidenojs() {
-        var nojs = document.getElementsByClassName("nojs");
-        for (var i = 0; i < nojs.length; i++) {
-          nojs[i].style.display = "none";
-        }
-      }
       emaildecode();
-      hidenojs();
     </script>
   </body>
 </html>
