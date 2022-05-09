@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <title>This website</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-wrap: break-word; /* legacy */
+        word-break: break-word; /* for WebKit/Chrome */
+      }
+
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+
+      code, .email {
+        font-family: monospace, monospace;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+
+      <p><a href="/">Index</a></p>
+
+      <h1>This website</h1>
+      <small><time>2022-05-09</time></small>
+
+      <p>My personal website has gone through
+      <a href="https://github.com/reinefjord/website">multiple</a>
+      <a href="https://github.com/reinefjord/reinefjord.net-v2">iterations</a>,
+      <a href="https://github.com/reinefjord/reinefjord.net-v3">this</a>
+      being the third version. The first one was a relatively simple Flask
+      app. The second one looked very similar to this one but had a Bash script
+      to compile CSS and cache bust static CSS and JS files, in practice a very
+      simple static site generator.</p>
+
+      <p>This one is just plain HTML files, written by hand, with CSS and JS
+      inline if needed. It is an exercise in
+      <a href="https://en.wikipedia.org/wiki/KISS_principle">
+        keeping it simple, stupid
+      </a>,
+      an experiment to see if the site evolves with time, and a way to satisfy
+      my longing for a time when the internet was less corporations and more
+      personal. It also helps that I really like simple, brutalist "design" in
+      web pages.</p>
+
+      <p>Having CSS and JavaScript inline hopefully means that this isolated
+      page should keep working even if other parts of the website change.
+      That's the "evolving" part. When I want to create a new page, I'll just
+      copy another page and just replace the content. This page is copied from
+      the index.html for example. Or I'll create a page from scratch.
+      Consistency is boring anyway, and I'm free to style every page however I
+      see fit.</p>
+
+      <p>I've deliberately made it available over both HTTP and HTTPS without
+      redirection from one to the other. I want this website to be available
+      through even the most basic means. If you do need to use HTTPS to
+      prevent your ISP from injecting ads or some other reason, you can.</p>
+
+      <p>Being able to do this makes me happy, though:</p>
+
+<pre><code>
+  $ nc reinefjord.net 80
+  GET / HTTP/1.0
+  Host: www.reinefjord.net
+
+  HTTP/1.1 200 OK
+  Server: nginx/1.14.2
+  Date: Mon, 09 May 2022 16:43:00 GMT
+  Content-Type: text/html
+  Content-Length: 2262
+  Last-Modified: Sat, 25 Dec 2021 11:29:26 GMT
+  ...
+
+</code></pre>
+
+    </main>
+
+    <footer>&#10086;</footer>
+  </body>
+</html>
