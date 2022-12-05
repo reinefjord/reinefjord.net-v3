@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <title>Workaround for broken Thinkpad Trackpoint</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-wrap: break-word; /* legacy */
+        word-break: break-word; /* for WebKit/Chrome */
+      }
+
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+
+      code, .email {
+        font-family: monospace, monospace;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      pre {
+        overflow-x: auto;
+        padding-left: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+
+      <p><a href="/">Index</a></p>
+
+      <h1>Workaround for broken TrackPoint</h1>
+      <small><time>2022-12-05</time></small>
+
+      <p>
+        Sometimes, seemingly at random after clicking the dedicated left click
+        or right click buttons, the buttons and trackpoint on my Lenovo
+        Thinkpad T14s stops working. Instead of clicking, the three mouse
+        buttons just makes the pointer move a bit and the trackpoint makes the
+        pointer move in a random direction and seems to issue clicks.
+      </p>
+      <p>
+        When this happens, the kernel buffer is spammed with "<code>psmouse
+        serio1: elantech: discarding packet</code>". Searching the interwebs,
+        I found that more people seem to be experiencing similar weirdness with
+        the elantech trackpoint driver.
+      </p>
+      <p>
+        Rebooting the computer works, but it's annoying. Removing and re-adding
+        the misbehaving kernel module resolves the issue too fortunately. I
+        put the following in <code>~/bin/fixmouse</code>:
+<pre><code>#!/bin/sh
+doas rmmod psmouse
+doas modprobe psmouse
+</pre></code>
+        So now I can run <code>fixmouse</code> whenever the driver stops
+        working.
+      </p>
+    </main>
+
+    <footer>&#10086;</footer>
+  </body>
+</html>
+<!-- vim: set tw=79 -->
