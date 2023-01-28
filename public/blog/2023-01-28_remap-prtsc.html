@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-wrap: break-word; /* legacy */
+        word-break: break-word; /* for WebKit/Chrome */
+      }
+
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      code, kbd {
+        font-size: 0.9rem;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      pre {
+        overflow-x: auto;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+    </style>
+
+    <title>Remap PrtSc to Meta/Super</title>
+  </head>
+
+  <body>
+    <main>
+      <p><a href="/">Index</a></p>
+
+      <article>
+        <header>
+          <h1>Remap PrtSc to Meta/Super</h1>
+          <small><time>2023-01-28</time></small>
+        </header>
+
+        <p>
+          On my Thinkpad T14s Gen 1, the right meta/super/windows key is replaced
+          by a "<kbd>PrtSc</kbd>" key. I use <a href="https://swaywm.org/">Sway</a> as my
+          Wayland compositor and use the meta keys a lot to navigate and manage
+          windows, and having only a left meta key makes some chords difficult to
+          use. I thus wanted to remap <kbd>PrtSc</kbd> to Meta.
+        </p>
+        <p>
+          I found <a href="https://github.com/rvaiya/keyd">keyd</a> which looked
+          promising. To use this, I need to know what key <kbd>PrtSc</kbd> maps to in the
+          OS. Using <code>evtest</code>:
+
+          <pre><code>Event: time 1674905628.580346, type 4 (EV_MSC), code 4 (MSC_SCAN), value b7
+Event: time 1674905628.580346, type 1 (EV_KEY), code 99 (KEY_SYSRQ), value 1</code></pre>
+
+          It seems like it is interpreted as <kbd>SysRq</kbd>.
+        </p>
+        <p>
+          To only remap this keyboard and not any other keyboards connected to
+          the computer, we'll need the vendor and product id of the built-in
+          keyboard. That can be found in <code>/proc/bus/input/devices</code>:
+
+<pre><code>$ cat /proc/bus/input/devices
+I: Bus=0011 Vendor=0001 Product=0001 Version=ab83
+N: Name="AT Translated Set 2 keyboard"
+...
+</pre></code>
+
+          <code>0001:0001</code>.
+        </p>
+        <p>
+          Next we'll configure keyd:
+
+<pre><code>$ cat /etc/keyd/default.conf
+[ids]
+0001:0001
+
+[main]
+sysrq = rightmeta
+</pre></code>
+
+          Restart keyd and we're done! The <kbd>PrtSc</kbd> key is interpreted as meta
+          instead.
+        </p>
+      </article>
+    </main>
+    <footer>&#10086;</footer>
+  </body>
+</html>
+<!-- vim: set tw=79 -->
