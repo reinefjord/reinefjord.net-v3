@@ -62,20 +62,25 @@
           windows, and having only a left meta key makes some chords difficult to
           use. I thus wanted to remap <kbd>PrtSc</kbd> to Meta.
         </p>
+
         <p>
           I found <a href="https://github.com/rvaiya/keyd">keyd</a> which looked
           promising. To use this, I need to know what key <kbd>PrtSc</kbd> maps to in the
           OS. Using <code>evtest</code>:
+        </p>
 
           <pre><code>Event: time 1674905628.580346, type 4 (EV_MSC), code 4 (MSC_SCAN), value b7
 Event: time 1674905628.580346, type 1 (EV_KEY), code 99 (KEY_SYSRQ), value 1</code></pre>
 
+        <p>
           It seems like it is interpreted as <kbd>SysRq</kbd>.
         </p>
+
         <p>
           To only remap this keyboard and not any other keyboards connected to
           the computer, we'll need the vendor and product id of the built-in
           keyboard. That can be found in <code>/proc/bus/input/devices</code>:
+        </p>
 
 <pre><code>$ cat /proc/bus/input/devices
 I: Bus=0011 Vendor=0001 Product=0001 Version=ab83
@@ -83,10 +88,13 @@ N: Name="AT Translated Set 2 keyboard"
 ...
 </code></pre>
 
+        <p>
           <code>0001:0001</code>.
         </p>
+
         <p>
           Next we'll configure keyd:
+        </p>
 
 <pre><code>$ cat /etc/keyd/default.conf
 [ids]
@@ -96,6 +104,7 @@ N: Name="AT Translated Set 2 keyboard"
 sysrq = rightmeta
 </code></pre>
 
+        <p>
           Restart keyd and we're done! The <kbd>PrtSc</kbd> key is interpreted as meta
           instead.
         </p>
