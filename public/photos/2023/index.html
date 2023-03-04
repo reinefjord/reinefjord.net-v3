@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <title>Photography</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-wrap: break-word; /* legacy */
+        word-break: break-word; /* for WebKit/Chrome */
+      }
+
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+      }
+
+      code, .email {
+        font-family: monospace, monospace;
+      }
+
+      #gpg-fingerprint {
+        font-size: small;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
+      img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p><a href="/">Index</a></p>
+      <h1>Photos of 2023</h1>
+      <p>
+        <i>2023-03-03:</i> The light outside looked interesting and I felt like
+        taking some photos. It was a lot more cold and rainy than what I was
+        expecting, so I didn't stay outside for long.
+      </p>
+      <a href="DSCF4917.JPG@1000"><img src="DSCF4917.JPG@500" width=500 alt="Edsviken at dusk."></a>
+    </main>
+
+    <footer>&#10086;</footer>
+
+    <script>
+      function emaildecode() {
+        var emails = document.getElementsByClassName("encoded");
+        for (var i = 0; i < emails.length; i++) {
+          var b64 = emails[i].dataset.encoded;
+          var decoded = window.atob(b64);
+          emails[i].innerHTML = decoded;
+          emails[i].href = "mailto:" + decoded;
+        }
+      }
+      emaildecode();
+    </script>
+  </body>
+</html>
