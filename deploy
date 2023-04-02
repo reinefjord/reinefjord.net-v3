@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync --ignore-existing -rPh public root@reinefjord.net:/var/www/reinefjord.net-v3/
