@@ -33,8 +33,11 @@
 
       pre {
         overflow-x: auto;
-        padding-left: 1rem;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 10px;
       }
+
     </style>
   </head>
 
@@ -70,6 +73,36 @@ doas modprobe psmouse
         So now I can run <code>fixmouse</code> whenever the driver stops
         working.
       </p>
+
+      <hr>
+
+      <p><i>Update 2023-09-24:</i> If the psmose module is builtin, it can't be
+      unloaded, giving "<code>rmmod: ERROR: Module psmouse is builtin.</code>"
+      Fortunately, there's a better way of reloading the trackpad using a
+      method described in an
+      <a href="https://lwn.net/Articles/143397/">article on LWN</a> from 2005.
+      </p>
+
+      <p>The error in the kernel buffer indicates that the trackpad is called
+      <code>serio1</code>, but for posterity we can find devices using the
+      <code>psmouse</code> driver with <code>find</code>:
+<pre><code>$ find /sys/bus -name psmouse
+/sys/bus/serio/drivers/psmouse
+$ ls -l /sys/bus/serio/drivers/psmouse
+total 0
+--w-------. 1 root root 4096 Sep 23 22:19 bind
+-rw-r--r--. 1 root root 4096 Sep 23 22:19 bind_mode
+-r--r--r--. 1 root root 4096 Sep 23 22:19 description
+lrwxrwxrwx. 1 root root    0 Sep 24 10:42 serio1 -> ../../../../devices/platform/i8042/serio1
+--w-------. 1 root root 4096 Sep 23 14:20 uevent
+--w-------. 1 root root 4096 Sep 24 10:36 unbind
+</pre></code>
+      As described in the article, we can unbind the touchpad with (as root)
+<pre><code>echo -n "serio1" > /sys/bus/serio/drivers/psmouse/unbind</pre></code>
+      My touchpad rebinds automatically after a few seconds, but you should be
+      able to bind it manually using
+      <code>[...]/psmouse/bind</code>.
+
     </main>
 
     <footer>&#10086;</footer>
