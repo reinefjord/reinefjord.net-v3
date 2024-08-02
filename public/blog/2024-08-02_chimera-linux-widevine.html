@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+      }
+
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      code, kbd {
+        background-color: #ddd;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      pre {
+        overflow-x: auto;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style>
+
+    <title>Playing Widevine (DRM protected) videos on Chimera Linux</title>
+  </head>
+
+  <body>
+    <main>
+      <p><a href="/">Index</a></p>
+
+      <article>
+        <header>
+          <h1>Playing Widevine (DRM protected) videos on Chimera&nbsp;Linux</h1>
+          <small><time>2024-08-02</time></small>
+        </header>
+
+        <p>
+          Widevine CDMs (Content Decryption Modules) are distributed as
+          proprietary binaries compiled for glibc and won't run on musl systems,
+          like Chimera Linux or the musl version of Void Linux.
+        </p>
+
+        <p>
+          On Chimera Linux,
+          <a href="https://github.com/chimera-linux/cports/blob/3ee8bb258121e6eebc405b8f6d2143a641a6037d/contrib/firefox/files/vendor.js#L14">
+            Firefox is configured by default</a> to not prompt to download Widevine
+          when needed like it normally will. You can override this in
+          <code>about:config</code> but the plugin will just crash under musl.
+        </p>
+
+        <h2>Workaround</h2>
+        <p>
+          The easiest way to get around this seems to be to
+          <a href="https://chimera-linux.org/docs/configuration/flatpak">
+            install a browser with Flatpak</a>,
+          which are compiled with glibc and ships with the environment they need, even
+          on musl systems.
+        </p>
+        <p>
+          Annoyingly, while running an instance of musl Firefox, starting Firefox with
+          <code>flatpak run</code> will not start a second Firefox process
+          but instead open a new window of your musl Firefox. Firefox has a flag for
+          that though: <code>flatpak run org.mozilla.firefox --new-instance</code>
+          starts a new instance of Flatpak Firefox.
+        </p>
+      </article>
+    </main>
+    <footer>&#10086;</footer>
+  </body>
+</html>
