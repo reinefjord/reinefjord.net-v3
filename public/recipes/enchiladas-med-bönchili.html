@@ -42,7 +42,11 @@
       }
 
       #ingredients {
-        max-width: 50ch;
+        max-width: 30ch;
+      }
+
+      #ingredients ul {
+        padding-left: 30px;
       }
 
       #instructions {
@@ -52,12 +56,12 @@
       @media (min-width: 650px) {
         #recipe {
           max-width: 120ch;
-          grid-template-columns: 2fr 1fr;
-          grid-template-areas:
+          grid-template:
             "intro        ."
             "instructions ingredients";
           column-gap: 20px;
         }
+
         #introduction {
           grid-area: intro;
         }
