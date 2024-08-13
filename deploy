@@ -1,4 +1,4 @@
 #!/bin/bash
 
 IFS=$'\n'
-rsync -Rtzv $(git ls-files public) root@reinefjord.net:/var/www/reinefjord.net-v3/
+rsync -Rtzv $(git ls-files public) root@$1:/var/www/reinefjord.net-v3/
