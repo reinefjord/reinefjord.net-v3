@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+      }
+
+      main {
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      code, kbd {
+        background-color: #ddd;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      pre {
+        overflow-x: auto;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      #recipe {
+        display: grid;
+      }
+
+      #ingredients {
+        max-width: 50ch;
+      }
+
+      #instructions {
+        max-width: 70ch;
+      }
+
+      @media (min-width: 650px) {
+        #recipe {
+          max-width: 120ch;
+          grid-template-columns: 2fr 1fr;
+          grid-template-areas:
+            "intro        ."
+            "instructions ingredients";
+          column-gap: 20px;
+        }
+        #introduction {
+          grid-area: intro;
+        }
+
+        #ingredients {
+          grid-area: ingredients;
+        }
+
+        #instructions {
+          grid-area: instructions;
+        }
+
+        footer {
+          max-width: 120ch;
+        }
+      }
+    </style>
+
+    <title>Enchiladas med bönchili</title>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <div id="recipe">
+          <div id="introduction">
+            <p><a href="/">Index</a></p>
+
+            <header>
+              <h1>Enchiladas med bönchili</h1>
+            </header>
+
+            <p>
+              Receptet kommer från matbloggen
+              <a href="https://javligtgott.se/recept/enchiladas-med-bonchili/">Jävligt Gott</a>.
+            </p>
+          </div>
+
+          <div id="ingredients">
+            <h2>Ingredienser</h2>
+
+            <h3>Chili</h3>
+            <ul>
+              <li>Gul lök - 2 st</li>
+              <li>Vitlök - 2 klyftor</li>
+              <li>Torkad chipotlechili - 1-2 st</li>
+              <li>Krossade tomater - 2 burkar</li>
+              <li>Rödvin - 2 dl</li>
+              <li>Torkad rosmarin - 1 tsk</li>
+              <li>Torkad oregano - 1 msk</li>
+              <li>Spiskummin - 1 tsk</li>
+              <li>Morötter - 3 st stora</li>
+              <li>Blandade bönor - 3 burkar</li>
+              <li>Vatten - 2 dl</li>
+              <li>Socker - 2 dl</li>
+              <li>Kinesisk soja - 1 msk</li>
+              <li>Koriander - 1 dl hackad</li>
+              <li>Persilja - 1 dl hackad</li>
+              <li>Limejuice - 0,5 lime</li>
+              <li>Salt</li>
+              <li>Svartpeppar</li>
+            </ul>
+
+            <h3>Montering</h3>
+            <ul>
+              <li>Stora tortillabröd - 8 st</li>
+              <li>Ost - 2 dl riven</li>
+              <li>Tacosås - 1 burk</li>
+            </ul>
+
+            <h3>Servering</h3>
+            <p><i>Ingredienser lämnas som en övning till läsaren.</i></p>
+            <ul>
+              <li>Guacamole</li>
+              <li>Grönsallad</li>
+            </ul>
+          </div>
+
+          <div id="instructions">
+            <h2>Instruktioner</h2>
+
+            <h3>Chili</h3>
+            <p>
+              Skiva lök, hacka vitlök och hacka chili. Bryn i olja tills de först blir mjuka
+              och sedan får lite färg i en djup stekpanna.
+            </p>
+            <p>
+              Skala och riv morötterna grovt och blanda ner dem i pannan tillsammans med de
+              torkade kryddorna. Låt steka i några minuter till.
+            </p>
+            <p>
+              Slå i rödvin, tomat och soja och låt koka ca 30 minuter utan lock tills såsen
+              har reducerat och blivit tjock. Smaka av med salt och peppar. Om såsen är för
+              syrlig från tomat och vin, smaka av med socker.
+            </p>
+            <p>
+              Skölj bönorna och blanda ner dem i såsen. Häll i lite mer vatten så att det går
+              lätt att blanda och koka sedan utan lock tills att chilin är riktigt tjock.
+            </p>
+            <p>
+              Smaka av igen med salt, peppar och socker (plus ev. chilipulver om du vill ha
+              det starkare).
+            </p>
+            <p>
+              Avsluta med att blanda ner persilja, koriander och att pressa över limejuicen.
+            </p>
+
+            <h3>Montering</h3>
+            <p>
+              Om du har kokat chilin tillräckligt länge kommer den att vara en ganska fast och
+              aromatisk röra.
+            </p>
+            <p>
+              Fyll varje tortillabröd med ca 2 dl chili och rulla ihop. Försök att även försluta
+              sidorna.
+            </p>
+            <p>
+              Lägg dina enchiladas i en ugnsfast form med bakplåtspapper i botten och täck dem
+              med tacosås och ost. Gratinera i 10 minuter på 225 grader.
+            </p>
+            <p>
+              Servera med en avocadosalsa eller guacamole samt en grönsallad.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>&#10086;</footer>
+  </body>
+</html>
