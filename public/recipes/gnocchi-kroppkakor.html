@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="196x196">
+
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+      }
+
+      main {
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      code, kbd {
+        background-color: #ddd;
+      }
+
+      .asterism, footer {
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      pre {
+        overflow-x: auto;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      #recipe {
+        display: grid;
+      }
+
+      #ingredients {
+        max-width: 30ch;
+      }
+
+      #ingredients ul {
+        padding-left: 30px;
+      }
+
+      #instructions {
+        max-width: 70ch;
+      }
+
+      @media (min-width: 650px) {
+        #recipe {
+          max-width: 120ch;
+          grid-template:
+            "intro        ."
+            "instructions ingredients";
+          column-gap: 20px;
+        }
+
+        #introduction {
+          grid-area: intro;
+        }
+
+        #ingredients {
+          grid-area: ingredients;
+        }
+
+        #instructions {
+          grid-area: instructions;
+        }
+
+        footer {
+          max-width: 120ch;
+        }
+      }
+    </style>
+
+    <title>Typ kroppkaka, fast gnocchi</title>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <div id="recipe">
+          <div id="introduction">
+            <p><a href="/">Index</a></p>
+            <h1>Typ kroppkaka, fast gnocchi</h1>
+          </div>
+
+          <div id="ingredients">
+            <h2>Ingredienser</h2>
+            <p>4 portioner.</p>
+
+            <ul>
+              <li>Röd lök - 1 st</li>
+              <li>Färsk gnocchi - 500 g</li>
+              <li>Bacon - 280 g</li>
+              <li>Kryddpeppar - 1/2 tsk</li>
+              <li>Gröna ärtor - 200 g</li>
+              <li>Smör - 3 msk</li>
+              <li>Rapsolja - 1 msk</li>
+              <li>Salt - 1 krm</li>
+            </ul>
+
+            <h3>Servering</h3>
+            <ul>
+              <li>Persilja till garnering</li>
+              <li>Rårörda lingon</li>
+            </ul>
+          </div>
+
+          <div id="instructions">
+            <h2>Instruktioner</h2>
+
+            <p>
+              Skala och strimla löken längs med fibrerna.
+            </p>
+
+            <p>
+              Börja koka ärtorna.
+            </p>
+
+            <p>
+              Stek lök, bacon och kryddpepper i 1 msk smör i en stekpanna
+              ca 5 minuter. Lyft upp och ställ åt sidan.
+            </p>
+
+            <p>
+              Stek gnocchin i resten av smöret och oljan i samma panna under
+              omrörning ca 5 minuter tills gnocchin är gyllenbrun och krispig.
+              Krydda med salt.
+            </p>
+
+            <p>
+              Lägg tillbaka baconfräset och stek ytterligare någon minut. Blanda
+              i ärtorna.
+            </p>
+
+            <p>
+              Garnera med persilja och servera med rårörda lingon.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>&#10086;</footer>
+  </body>
+</html>
