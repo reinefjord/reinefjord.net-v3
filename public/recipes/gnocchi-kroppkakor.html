@@ -76,6 +76,12 @@
           max-width: 120ch;
         }
       }
+
+      @media print {
+        #index {
+          display: none;
+        }
+      }
     </style>
 
     <title>Typ kroppkaka, fast gnocchi</title>
@@ -85,7 +91,7 @@
     <main>
       <div id="recipe">
         <div id="introduction">
-          <p><a href="/">Index</a></p>
+          <p id="index"><a href="/">Index</a></p>
           <h1>Typ kroppkaka, fast gnocchi</h1>
         </div>
 
